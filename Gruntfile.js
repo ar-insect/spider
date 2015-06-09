@@ -53,6 +53,7 @@ module.exports = function(grunt) {
                     dest : 'assets'
                 }]
             },
+            /*
             highlight : {
                 files : [{
                     expand : true,
@@ -61,7 +62,6 @@ module.exports = function(grunt) {
                     dest : 'assets'
                 }]
             },
-            /*
             cellula : {
                 files : [{
                     expand : true,
@@ -194,6 +194,7 @@ module.exports = function(grunt) {
                 dest: 'assets/',
                 ext: '.css'
             },
+            /*
             compress: {
                 files: {
                     'assets/gmu/2.1.0/gmu.css': [
@@ -207,6 +208,7 @@ module.exports = function(grunt) {
                     ]
                 }
             },
+            */
             foundation: {
                 src: 'assets/foundation/5.5.0/foundation-debug.css',
                 dest: 'assets/foundation/5.5.0/foundation.css'
@@ -254,7 +256,6 @@ module.exports = function(grunt) {
                     'assets/fdp/1.1.0/fdp.js': ['assets/fdp/1.1.0/*.js']
                 }
             },
-            */
             gmu: {
                 options : {
                     noncmd: true
@@ -293,6 +294,7 @@ module.exports = function(grunt) {
                     ]
                 }
             },
+            */
             foundation : {
                 options : {
                     noncmd: true
@@ -412,14 +414,14 @@ module.exports = function(grunt) {
         bootstrapGenerateCommonJSModule(grunt, srcFiles, destFilepath);
     });
     // other js
-    grunt.registerTask('other-dist-js', [/*'concat:cellula', 'concat:fdp',*/ 'concat:column', 'concat:gmu', 'uglify:compress']);
+    grunt.registerTask('other-dist-js', [/*'concat:cellula', 'concat:fdp', 'concat:column', 'concat:gmu',*/ 'uglify:compress']);
     // foundation css
     grunt.registerTask('foundation-dist-css', ['csscomb:foundation', 'cssmin:foundation']);
     // bootstrap css
     grunt.registerTask('bootstrap-less-compile', ['less:bootstrap_compileCore', 'less:bootstrap_compileTheme']);
     grunt.registerTask('bootstrap-dist-css', ['bootstrap-less-compile', 'autoprefixer:bootstrap_core', 'autoprefixer:bootstrap_theme', 'csscomb:bootstrap', 'cssmin:bootstrap_minifyCore', 'cssmin:bootstrap_minifyTheme']);
     // other css
-    grunt.registerTask('other-dist-css', ['css_import', 'cssmin:minify', 'cssmin:compress']);
+    grunt.registerTask('other-dist-css', ['css_import', 'cssmin:minify'/*, 'cssmin:compress'*/]);
     // other
     grunt.registerTask('other', ['copy', 'transport']);
     // Full

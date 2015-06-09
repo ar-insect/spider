@@ -24,7 +24,6 @@ var config = {
      * 请自行修改模板引擎配置
      * 注意：主要修改`name` `engine` `extension`
      */
-    /*
     template: {
         name: 'velocity',
         engine: require('velocityjs'), // 模板引擎
@@ -35,7 +34,7 @@ var config = {
             return _.isFunction(call) ? call : fn;
         }
     },
-    */
+     /*
     template: {
         name: 'jade',
         engine: require('jade'), // 模板引擎
@@ -45,6 +44,7 @@ var config = {
             return _.isFunction(call) ? call : _.noop;
         }
     },
+*/
     version: pkg.version,
     // site sittings
     host: '10.63.73.38',
