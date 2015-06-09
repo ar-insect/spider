@@ -1,0 +1,14 @@
+{
+    "default": {
+        "vars": {
+            "layout": "null",
+            "title": "首页"
+        }
+    },
+    "page": {
+        "index": {
+            "vars": {
+            }
+        }
+    }
+}
