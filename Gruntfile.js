@@ -61,6 +61,7 @@ module.exports = function(grunt) {
                     dest : 'assets'
                 }]
             },
+            /*
             cellula : {
                 files : [{
                     expand : true,
@@ -73,10 +74,11 @@ module.exports = function(grunt) {
                 files : [{
                     expand : true,
                     cwd : 'lib/',
-                    src : ['fdp/**/*.js'],
+                    src : ['fdp/1.1.0/*.js'],
                     dest : 'assets'
                 }]
             },
+            */
             commonjs: {
                 files : [{
                     expand : true,
@@ -95,7 +97,8 @@ module.exports = function(grunt) {
                     '.css' : [style.css2jsParser]
                 },
                 paths : ['assets']
-            },
+            }
+            /*,
             cellula : {
                 options : {
                     idleading : 'cellula/0.4.2/'
@@ -120,6 +123,7 @@ module.exports = function(grunt) {
                     dest : 'assets/fdp/1.1.0'
                 }]
             }
+            */
         },
         less: {
             bootstrap_compileCore: {
@@ -239,6 +243,7 @@ module.exports = function(grunt) {
                 paths : ['.'],
                 separator: ';'
             },
+            /*
             cellula: {
                 files : {
                     'assets/cellula/0.4.2/cellula.js': ['assets/cellula/0.4.2/*.js']
@@ -249,6 +254,7 @@ module.exports = function(grunt) {
                     'assets/fdp/1.1.0/fdp.js': ['assets/fdp/1.1.0/*.js']
                 }
             },
+            */
             gmu: {
                 options : {
                     noncmd: true
@@ -340,7 +346,7 @@ module.exports = function(grunt) {
                 files : [{
                     expand : true,
                     cwd : 'assets/',
-                    src : ['$.js', 'cellula/**/*.js', 'fdp/**/*.js', 'common/**/*.js'],
+                    src : ['$.js', 'common/**/*.js'],
                     dest : 'assets/'
                 }]
             }
@@ -406,7 +412,7 @@ module.exports = function(grunt) {
         bootstrapGenerateCommonJSModule(grunt, srcFiles, destFilepath);
     });
     // other js
-    grunt.registerTask('other-dist-js', ['concat:cellula', 'concat:fdp', 'concat:column', 'concat:gmu', 'uglify:compress']);
+    grunt.registerTask('other-dist-js', [/*'concat:cellula', 'concat:fdp',*/ 'concat:column', 'concat:gmu', 'uglify:compress']);
     // foundation css
     grunt.registerTask('foundation-dist-css', ['csscomb:foundation', 'cssmin:foundation']);
     // bootstrap css
